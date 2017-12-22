@@ -1,0 +1,241 @@
+.sign-up {
+  padding: 30px 10px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #5c5c5c;
+  
+  .sign-up-holder {
+    max-width: 400px;
+    border: 2px solid #c3c3c3;
+    border-radius: 5px;
+    margin: 0 auto;
+  }
+
+  .title {
+    color: #58a2eb;
+    font-size: 22px;
+    line-height: 28px;
+    text-align: center;
+    padding: 18px 20px;
+  }
+
+  .progress-bar {
+    height: 10px;
+    border-style: solid;
+    border-width: 1px 0;
+    border-color: #c3c3c3;
+    overflow: hidden;
+    margin: 0 0 60px;
+  }
+
+  .step-1 {
+    padding: 0 0 70px;
+  }
+  
+  .step-2 {
+    text-align: center;
+    padding: 0 0 40px;
+  }
+
+  .step-2 .progress-bar {
+    margin: 0 0 40px;
+  }
+
+  .step-3 .progress-bar {
+    margin: 0 0 100px;
+  }
+
+  .progress-bar:after {
+    content: '';
+    background: #498fe1;
+    height: 10px;
+    float: left;
+    width: 33%;
+  }
+
+  .step-2 .progress-bar:after {
+    width: 66%
+  }
+  
+  .step-3 .progress-bar:after {
+    width: 100%;
+  }
+  
+  .row {
+    padding: 10px 20px;
+  }
+  
+  .row.buttons {
+    overflow: hidden;
+    border-top: 1px solid #c3c3c3;
+    padding: 20px; 
+  }
+
+  .row > label {
+    text-transform: uppercase;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0 10px;
+  }
+
+  input {
+    outline: none;
+    border-style: solid;
+    border-width: 0 0 1px;
+    border-color: #c3c3c3;
+    width: 100%;
+    display: block;
+    font-size: 16px;
+    line-height: 18px;
+    color: #5c5c5c;
+    padding: 5px 0;
+    margin: 0;
+  }
+
+  .btn-back,
+  .btn-next,
+  .btn-go-to-dashboard {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    font-size: 18px;
+    line-height: 22px;
+    cursor: pointer;
+    color: #58a2e8;
+  }
+
+  .btn-back {
+    color: #abaaab;
+    float: left;
+  }
+
+  .btn-next {
+    float: right;
+  }
+  
+  .birth-date {
+    position: relative;
+
+    .error {
+      background: #fff;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    .fields {
+      overflow: hidden;
+      border: 2px solid #c3c3c3;
+      border-radius: 5px;
+    }
+
+    label {
+      display: inline-block;
+      vertical-align: top;
+      text-align: center;
+      margin: 0 0 10px;
+    }
+
+    input {
+      box-sizing: border-box;
+      width: 33.3%;
+      float: left;
+      padding: 10px;
+      text-align: center;
+      border-width: 0 0 0 1px;
+      
+      &:first-child {
+        border: 0;
+      }
+    }
+  }
+  
+  .gender {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 2px solid #c3c3c3;
+
+    .block {
+      position: relative;
+      width: 33.3%;
+      float: left;
+      border-left: 1px solid #c3c3c3;
+      box-sizing: border-box; 
+    }
+
+    .block:first-child {
+      border-left: 0;
+    }
+
+    input{
+      position: absolute;
+      visibility: hidden;
+    }
+
+    label {
+      display: block;
+      padding: 10px;
+      cursor: pointer;
+      margin: 0;
+    }
+
+    input:checked + label {
+      background: #498fe1;
+      color: #fff;
+    }
+  }
+  
+  .select-holder {
+    position: relative;
+
+    &:after {
+      content: '';
+    }
+
+    select {
+      border: 2px solid #c3c3c3;
+      line-height: 20px;
+      font-size: 16px;
+      padding: 10px;
+      background: none;
+      display: block;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  .step-3 {
+    padding: 0 0 60px;
+    text-align: center;
+  }
+  
+  .btn-go-to-dashboard {
+    border: 1px solid #498fe1;
+    border-radius: 5px;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  .check-success{
+    width: 170px;
+    height: 170px;
+    border-radius: 85px;
+    background: #b7E886;
+    color: #fff;
+    font-size: 130px;
+    line-height: 170px;
+    margin: 0 auto 40px;
+  }
+  
+  .error {
+    color: #f00;
+  } 
+}
