@@ -3,6 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import validate from './validate';
 
 const SignUpFormSecondStep = props => {
+  console.log(props);
   const { handleSubmit, previousPage } = props;
   const renderError = ({ meta: { touched, error } }) => touched && error ? <span className="error">{error}</span> : false
   const renderGenderError = ({ meta: { touched, error } }) => touched && error ? <label><span className="error">Gender is {error}</span></label> : <label>Gender</label> 

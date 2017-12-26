@@ -1,13 +1,16 @@
 import React from 'react';
 import { reduxForm, formValueSelector } from 'redux-form';
 import { connect } from 'react-redux';
-import validate from './validate';
 
 let SignUpFormThirdStep = (props) => {
-  const { values } = props;
-  console.log(values);
+  console.log(props.formValues);
+  const {
+    handleSubmit,
+    formValues,
+  } = props;
+
   return (
-    <form onSubmit={props.handleSubmit}>
+    <form onSubmit={ handleSubmit }>
       <div className="title">Thank you!</div>
       <div className="step-3">
         <div className="progress-bar" />
@@ -22,16 +25,15 @@ SignUpFormThirdStep = reduxForm({
   form: 'signUp',
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
-  validate,
 })(SignUpFormThirdStep);
 
 const selector = formValueSelector('signUp');
 
 SignUpFormThirdStep = connect((state) => {
-  const values = selector(state, 'email');
+  const formValues = selector(state, 'email', 'password', 'birthDay', 'birthMonth', 'birthYear', 'sex');
   return {
-    values,
+    formValues,
   };
 })(SignUpFormThirdStep);
 
-export default SignUpFormThirdStep;
+export default  SignUpFormThirdStep;

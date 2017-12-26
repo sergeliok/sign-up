@@ -157,14 +157,14 @@
   
   .gender {
     position: relative;
-    overflow: hidden;
     border-radius: 5px;
     border: 2px solid #c3c3c3;
+    display: flex;
 
     .block {
       position: relative;
+      flex-grow:3;
       width: 33.3%;
-      float: left;
       border-left: 1px solid #c3c3c3;
       box-sizing: border-box; 
     }
@@ -173,9 +173,9 @@
       border-left: 0;
     }
 
-    input{
+    input {
       position: absolute;
-      visibility: hidden;
+      opacity: 0;
     }
 
     label {
@@ -188,6 +188,9 @@
     input:checked + label {
       background: #498fe1;
       color: #fff;
+    }
+    input:focus + label {
+      box-shadow: 0 0 3px #498fe1 inset;
     }
   }
   

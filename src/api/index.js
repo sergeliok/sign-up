@@ -1,1 +1,7 @@
-export * as Api from './user';
+import * as user from './user';
+
+const Api = {
+  ...user,
+};
+
+export default Api;

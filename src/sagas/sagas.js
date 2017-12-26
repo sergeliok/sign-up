@@ -1,5 +1,11 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import Api from '../api';
+import consts from '../const';
+
+const {
+  USER_CREATE_REQUESTED,
+  USER_DELETE_REQUESTED,
+} = consts;
 
 function* createUser(action) {
   try {
@@ -11,7 +17,7 @@ function* createUser(action) {
 }
 
 function* userSaga() {
-  yield takeEvery('USER_CREATE_REQUESTED', createUser);
+  yield takeEvery(USER_CREATE_REQUESTED, createUser);
 }
 
 export default userSaga;

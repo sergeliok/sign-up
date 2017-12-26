@@ -5,7 +5,7 @@ import validate from './validate';
 import renderField from './render-field';
 
 const SignUpFormFirstStep = props => (
-  <form onSubmit={props.onSubmit}>
+  <form onSubmit={props.handleSubmit}>
     <div className="title">Signup</div>
     <div className="step-1">
         <div className="progress-bar" />
@@ -14,7 +14,7 @@ const SignUpFormFirstStep = props => (
         <Field name="confirmPassword" component={renderField} label="Confirm password" type="password" />
       </div>
       <div className="row buttons">
-        <button type="submit" className="btn-next">Next &#8594;</button>
+        <button type="submit" onClick={props.handleSubmit} className="btn-next">Next &#8594;</button>
       </div>
   </form>
 );
