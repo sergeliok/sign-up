@@ -3,7 +3,6 @@ import { reduxForm, formValueSelector } from 'redux-form';
 import { connect } from 'react-redux';
 
 let SignUpFormThirdStep = (props) => {
-  console.log(props.formValues);
   const {
     handleSubmit,
     formValues,
