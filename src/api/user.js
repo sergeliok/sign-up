@@ -1,7 +1,6 @@
-import axios from 'axios';
+import request from './request';
 
-export const createUser = (user) => (
-  axios.post('/user', user)
-  .then(res=>res)
-  .catch(error=>error)
-)
+export const createUserRequest = user => request('api/user', {
+  method: 'POTS',
+  user,
+});

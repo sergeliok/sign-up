@@ -65,5 +65,5 @@ export default reduxForm({
   form: 'signUp',
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
-  validate
-})(SignUpFormSecondStep)
+  validate,
+})(SignUpFormSecondStep);

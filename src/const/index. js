@@ -1,0 +1,9 @@
+import * as UserConst from './user-const';
+import * as SignUpSteps from './sign-up-steps';
+
+const consts = {
+  ...UserConst,
+  ...SignUpSteps,
+};
+
+export default consts;

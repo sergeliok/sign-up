@@ -1,3 +1,3 @@
-export const prevStep = () => ({
-  type: 'PREV_STEP'
-})
+export default () => ({
+  type: 'PREV_STEP',
+});

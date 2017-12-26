@@ -1,24 +1,37 @@
 import React from 'react';
-import { reduxForm } from 'redux-form';
+import { reduxForm, formValueSelector } from 'redux-form';
+import { connect } from 'react-redux';
 import validate from './validate';
 
-const SignUpFormThirdStep = props => {
-  const { handleSubmit } = props
+let SignUpFormThirdStep = (props) => {
+  const { values } = props;
+  console.log(values);
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={props.handleSubmit}>
       <div className="title">Thank you!</div>
       <div className="step-3">
-        <div className="progress-bar"></div>
+        <div className="progress-bar" />
         <div className="check-success">&#10003;	</div>
-        <a type="submit" className="btn-go-to-dashboard">Go to dashboard &#8594;</a>
+        <button type="submit" className="btn-go-to-dashboard">Go to dashboard &#8594;</button>
       </div>
     </form>
-  )
-}
+  );
+};
 
-export default reduxForm({
+SignUpFormThirdStep = reduxForm({
   form: 'signUp',
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
-  validate
-})(SignUpFormThirdStep)
+  validate,
+})(SignUpFormThirdStep);
+
+const selector = formValueSelector('signUp');
+
+SignUpFormThirdStep = connect((state) => {
+  const values = selector(state, 'email');
+  return {
+    values,
+  };
+})(SignUpFormThirdStep);
+
+export default SignUpFormThirdStep;
