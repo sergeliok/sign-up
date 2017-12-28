@@ -1,22 +1,23 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import PropTypes from 'prop-types';
 import validate from './validate';
 
-const SignUpFormSecondStep = props => {
+const SignUpFormSecondStep = (props) => {
   const { handleSubmit, previousPage } = props;
-  const renderError = ({ meta: { touched, error } }) => touched && error ? <span className="error">{error}</span> : false
-  const renderGenderError = ({ meta: { touched, error } }) => touched && error ? <label><span className="error">Gender is {error}</span></label> : <label>Gender</label> 
+  const renderError = ({ meta: { touched, error } }) => (touched && error ? <span className="error">{error}</span> : false);
+  const renderGenderError = ({ meta: { touched, error } }) => (touched && error ? <label><span className="error">Gender is {error}</span></label> : <label>Gender</label>);
   return (
     <form onSubmit={handleSubmit}>
       <div className="title">Signup</div>
       <div className="step-2">
-        <div className="progress-bar"></div>
+        <div className="progress-bar" />
         <div className="row">
           <div className="birth-date">
             <label>DATE OF BIRTH</label>
-            <Field component={renderError} name="birthDay"/>
-            <Field component={renderError} name="birthMonth"/>
-            <Field component={renderError} name="birthYear"/>
+            <Field component={renderError} name="birthDay" />
+            <Field component={renderError} name="birthMonth" />
+            <Field component={renderError} name="birthYear" />
             <div className="fields">
               <Field name="birthDay" maxLength="2" component="input" type="text" placeholder="DD" />
               <Field name="birthMonth" maxLength="2" component="input" type="text" placeholder="MM" />
@@ -28,7 +29,7 @@ const SignUpFormSecondStep = props => {
           <Field component={renderGenderError} name="sex" />
           <div className="gender">
             <div className="block">
-              <Field id="male" name="sex" component="input" type="radio" value="male "/>
+              <Field id="male" name="sex" component="input" type="radio" value="male " />
               <label htmlFor="male">Male</label>
             </div>
             <div className="block">
@@ -58,8 +59,13 @@ const SignUpFormSecondStep = props => {
         <button type="submit" className="btn-next">Next &#8594;</button>
       </div>
     </form>
-  )
-}
+  );
+};
+
+SignUpFormSecondStep.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  previousPage: PropTypes.func.isRequired,
+};
 
 export default reduxForm({
   form: 'signUp',

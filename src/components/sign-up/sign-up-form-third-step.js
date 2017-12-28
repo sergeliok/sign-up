@@ -1,5 +1,6 @@
 import React from 'react';
 import { reduxForm, formValueSelector } from 'redux-form';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 let SignUpFormThirdStep = (props) => {
@@ -9,7 +10,7 @@ let SignUpFormThirdStep = (props) => {
   } = props;
 
   return (
-    <form onSubmit={ handleSubmit }>
+    <form onSubmit={handleSubmit}>
       <div className="title">Thank you!</div>
       <div className="step-3">
         <div className="progress-bar" />
@@ -18,6 +19,10 @@ let SignUpFormThirdStep = (props) => {
       </div>
     </form>
   );
+};
+
+SignUpFormThirdStep.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
 };
 
 SignUpFormThirdStep = reduxForm({
@@ -35,4 +40,4 @@ SignUpFormThirdStep = connect((state) => {
   };
 })(SignUpFormThirdStep);
 
-export default  SignUpFormThirdStep;
+export default SignUpFormThirdStep;

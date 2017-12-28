@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { nextStep, prevStep } from '../../actions/sign-up-step';
 import { createUser } from '../../actions/user';
@@ -19,6 +20,13 @@ const SignUp = (props) => {
     </div>
   )
 };
+
+SignUp.propTypes = {
+  currentStep: PropTypes.number.isRequired,
+  nextStep: PropTypes.func.isRequired,
+  prevStep: PropTypes.func.isRequired,
+  createUser: PropTypes.func.isRequired,
+}
 
 function mapStateToProps(state) {
   return {
