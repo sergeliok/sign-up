@@ -10,8 +10,6 @@ import './index.scss';
 import App from './components/App';
 import allReducers from './reducers';
 
-import registerServiceWorker from './registerServiceWorker';
-
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(allReducers, composeWithDevTools(applyMiddleware(sagaMiddleware)));
 
@@ -21,4 +19,3 @@ ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>, document.getElementById('root'));
-registerServiceWorker();
