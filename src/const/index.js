@@ -1,9 +1,7 @@
 import * as user from './user';
 import * as signUpSteps from './sign-up-steps';
 
-const consts = {
+export default {
   ...user,
   ...signUpSteps,
 };
-
-export default consts;

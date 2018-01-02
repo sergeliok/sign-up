@@ -9,17 +9,21 @@ import SignUpFormFirstStep from './sign-up-form-first-step';
 import SignUpFormSecondStep from './sign-up-form-second-step';
 import SignUpFormThirdStep from './sign-up-form-third-step';
 
-const SignUp = (props) => {
-  return (
-    <div className="sign-up">
-      <div className="sign-up-holder">
-        { props.currentStep === 1 ? <SignUpFormFirstStep onSubmit={props.nextStep} /> : false }
-        { props.currentStep === 2 ? <SignUpFormSecondStep onSubmit={props.nextStep} previousPage={props.prevStep} /> : false }
-        { props.currentStep === 3 ? <SignUpFormThirdStep onSubmit={props.createUser} /> : false}
-      </div>
+const SignUp = (props) => (
+  <div className="sign-up">
+    <div className="sign-up-holder">
+      {props.currentStep === 1
+        ? <SignUpFormFirstStep onSubmit={props.nextStep} />
+        : null}
+      {props.currentStep === 2
+        ? <SignUpFormSecondStep onSubmit={props.nextStep} previousPage={props.prevStep} />
+        : null}
+      {props.currentStep === 3
+        ? <SignUpFormThirdStep onSubmit={props.createUser} />
+        : null}
     </div>
-  )
-};
+  </div>
+);
 
 SignUp.propTypes = {
   currentStep: PropTypes.number.isRequired,
