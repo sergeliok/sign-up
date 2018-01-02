@@ -1,9 +1,7 @@
-import consts from '../const';
-
-const {
+import {
   USER_CREATE_REQUESTED,
   USER_DELETE_REQUEST,
-} = consts;
+} from '../const';
 
 export const createUser = user => ({
   type: USER_CREATE_REQUESTED,

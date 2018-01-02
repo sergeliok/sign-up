@@ -1,12 +1,10 @@
 import { call, put, takeEvery, fork } from 'redux-saga/effects';
 import Api from '../api';
-import consts from '../const';
-
-const {
+import {
   USER_CREATE_REQUESTED,
   USER_CREATE_SUCCEEDED,
   USER_CREATE_FAILED,
-} = consts;
+} from '../const';
 
 function* createUser({ payload }) {
   try {

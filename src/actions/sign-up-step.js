@@ -1,9 +1,7 @@
-import consts from '../const';
-
-const {
+import {
   NEXT_STEP,
   PREV_STEP,
-} = consts;
+} from '../const';
 
 export const nextStep = () => ({
   type: NEXT_STEP,

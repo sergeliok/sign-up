@@ -1,7 +1,2 @@
-import * as user from './user';
-import * as signUpSteps from './sign-up-steps';
-
-export default {
-  ...user,
-  ...signUpSteps,
-};
+export * from './user';
+export * from './sign-up-steps';
