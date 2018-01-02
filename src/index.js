@@ -4,7 +4,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
-import mySaga from './sagas/sagas';
+import mySaga from './sagas';
 
 import './index.scss';
 import App from './components/App';
@@ -17,7 +17,8 @@ const store = createStore(allReducers, composeWithDevTools(applyMiddleware(sagaM
 
 sagaMiddleware.run(mySaga);
 
-ReactDOM.render(<Provider store={store}>
+ReactDOM.render(
+  <Provider store={store}>
     <App />
   </Provider>, document.getElementById('root'));
 registerServiceWorker();
