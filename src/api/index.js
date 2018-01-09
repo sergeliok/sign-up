@@ -1,7 +1,7 @@
-import * as user from './user';
+export * from './user';
 
-const Api = {
-  ...user,
-};
+// const Api = {
+//   ...user,
+// };
 
-export default Api;
+// export default Api;

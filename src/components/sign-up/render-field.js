@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const renderField = ({ input, label, type, meta: { touched, error } }) => (
   <div className="row">
@@ -9,6 +9,6 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
       </label>
       <input id={input.name} {...input} type={type} />
   </div>
-)
+);
 
 export default renderField;

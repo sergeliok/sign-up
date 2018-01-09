@@ -30,7 +30,7 @@ SignUp.propTypes = {
   nextStep: PropTypes.func.isRequired,
   prevStep: PropTypes.func.isRequired,
   createUser: PropTypes.func.isRequired,
-}
+};
 
 function mapStateToProps(state) {
   return {

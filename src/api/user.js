@@ -1,11 +1,13 @@
 import request from './request';
+import config from '../config';
 
-export const createUserRequest = user => request('api/user', {
-  method: 'POTS',
-  user,
-});
-
-export const deleteUserRequest = user => request('api/user', {
-  method: 'delete',
-  user,
+export const createUserRequest = user => request({
+  url: `${config.endpoint}/user`,
+  method: 'POST',
+  data: {
+    ...user
+  },
+  headers: {
+    'Content-Type': 'application/json'
+  }
 });

@@ -9,7 +9,7 @@ const {
 
 module.exports = {
   entry: [
-    // `webpack-dev-server/client?http://${hotHost}:${hotPort}`,
+    `webpack-dev-server/client?http://${hotHost}:${hotPort}`,
     'babel-polyfill',
     './src/index.js',
   ],

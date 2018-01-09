@@ -1,13 +1,15 @@
 import React from 'react';
 import { reduxForm, formValueSelector } from 'redux-form';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 let SignUpFormThirdStep = (props) => {
   const {
     handleSubmit,
-    formValues,
+    // formValues,
   } = props;
+
+  console.log(props)
 
   return (
     <form onSubmit={handleSubmit}>
@@ -31,13 +33,13 @@ SignUpFormThirdStep = reduxForm({
   forceUnregisterOnUnmount: true,
 })(SignUpFormThirdStep);
 
-const selector = formValueSelector('signUp');
+// const selector = formValueSelector('signUp');
 
-SignUpFormThirdStep = connect((state) => {
-  const formValues = selector(state, 'email', 'password', 'birthDay', 'birthMonth', 'birthYear', 'sex');
-  return {
-    formValues,
-  };
-})(SignUpFormThirdStep);
+// SignUpFormThirdStep = connect((state) => {
+//   const formValues = selector(state, 'email', 'password', 'birthDay', 'birthMonth', 'birthYear', 'sex');
+//   return {
+//     formValues,
+//   };
+// })(SignUpFormThirdStep);
 
 export default SignUpFormThirdStep;
