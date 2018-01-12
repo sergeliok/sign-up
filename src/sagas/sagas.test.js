@@ -1,2 +1,0 @@
-import rootSaga from './index';
-

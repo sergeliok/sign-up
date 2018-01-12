@@ -5,9 +5,9 @@ export const createUserRequest = user => request({
   url: `${config.endpoint}/user`,
   method: 'POST',
   data: {
-    ...user
+    ...user,
   },
   headers: {
-    'Content-Type': 'application/json'
-  }
+    'Content-Type': 'application/json',
+  },
 });
