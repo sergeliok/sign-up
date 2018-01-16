@@ -1,5 +1,5 @@
 import { takeEvery, fork } from 'redux-saga/effects';
-import userSaga from './user-saga';
+import createUser from './user-saga';
 
 import {
   USER_CREATE_REQUEST,

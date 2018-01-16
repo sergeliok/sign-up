@@ -1,8 +1,7 @@
 import { call, put } from 'redux-saga/effects';
-import createUser from './user-saga';
 
-import { setClient } from '../api/request';
 import { createUserRequest } from '../api';
+import createUser from './user-saga';
 
 describe('user saga', () => {
   const event = {
@@ -11,12 +10,6 @@ describe('user saga', () => {
     },
   };
 
-  const client = () => new Promise((resolve, reject) => {
-    setTimeout(() => resolve(event.payload), 1000);
-  });
-
-  setClient(client);
-
   const generator = createUser(event);
 
   it('it should dispatch create user succeed ', () => {
@@ -24,7 +17,7 @@ describe('user saga', () => {
   });
 
   it('it should call effect ', () => {
-    expect(generator.next().value).toEqual(put({ type: 'USER_CREATE_SUCCEEDED', user: event.payload }));
+    expect(generator.next().value).toEqual(put({ type: 'USER_CREATE_SUCCEEDED', user: undefined }));
   });
 
   it('it should return undefined', () => {

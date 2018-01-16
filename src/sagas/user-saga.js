@@ -6,7 +6,6 @@ import {
   USER_CREATE_FAILED,
 } from '../const';
 
-
 export default function* createUser(event) {
   try {
     const user = yield call(createUserRequest, event.payload);
